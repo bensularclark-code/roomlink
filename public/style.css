@@ -260,10 +260,10 @@ nav.tabs { display: flex; gap: 3px; background: var(--card); padding: 4px; borde
    ============================================= */
 .modal-overlay {
   position: fixed; inset: 0; background: rgba(90,42,34,.45);
-  z-index: 60; display: flex; align-items: center; justify-content: center;
-  padding: 20px; opacity: 0; pointer-events: none; transition: opacity .2s ease;
+  z-index: 999; display: none; align-items: center; justify-content: center;
+  padding: 20px;
 }
-.modal-overlay.open { opacity: 1; pointer-events: auto; }
+.modal-overlay.open { display: flex; }
 
 .modal {
   background: white; border-radius: 22px; width: 100%; max-width: 480px;
