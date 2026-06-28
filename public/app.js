@@ -819,11 +819,16 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 async function init() {
   loadAuth();
 
+  // Initialize the login/signup modal
+  setupAuthModal();
+
   // Load locations for filter
   try {
     const { locations } = await apiFetch('/api/listings/locations');
     state.locations = locations;
-  } catch (_) {}
+  } catch (err) {
+    console.error(err);
+  }
 
   renderBrowse();
 }
